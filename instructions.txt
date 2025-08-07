@@ -528,15 +528,8 @@ Async is Parent /Await is a Child
 Promise Chain
 
 
-
-
-
 axios.post(aa1,aa2,aa3);
 axios.post('string',{},{});
-
-
-
-
 
 Whenever you are calling api CRUD You should use TryCatch Block
 
@@ -546,7 +539,57 @@ try{}.catch().finally()
 try{}.catch() Block
 
 
+useEffect Hook Function === After Page Reload
 
+Promise CHain based example of Axios
+
+axios.get('/user?ID=12345').then(()=>{}).catch((error)=>{});
+
+
+Async/Await Bashed example of Axios
+
+{
+    "data": [
+        {
+            "id": 2,
+            "documentId": "qp10dq8cbovt3w4hdyqbvlqh",
+            "category_name": "Restaurants",
+            "icon_url": "https://akam.cdn.jdmagicbox.com/images/icons/newwap/newhotkey/restaurant-2022.svg?w=96&q=75",
+            "is_featured": true,
+            "createdAt": "2025-08-07T03:54:05.962Z",
+            "updatedAt": "2025-08-07T03:54:05.962Z",
+            "publishedAt": "2025-08-07T03:54:05.972Z"
+        },
+        {
+            "id": 4,
+            "documentId": "pordggslueau1diwnvg3xds7",
+            "category_name": "Hotels",
+            "icon_url": "https://akam.cdn.jdmagicbox.com/images/icons/newwap/newhotkey/hotel-2022.svg?w=96&q=75",
+            "is_featured": true,
+            "createdAt": "2025-08-07T03:54:49.274Z",
+            "updatedAt": "2025-08-07T03:54:49.274Z",
+            "publishedAt": "2025-08-07T03:54:49.282Z"
+        },
+        {
+            "id": 7,
+            "documentId": "lfymgxahe8ou7r2uowxlkyop",
+            "category_name": "Car Hire2",
+            "icon_url": "https://akam.cdn.jdmagicbox.com/images/icons/newwap/newhotkey/cabcarrental.svg?w=64&q=75",
+            "is_featured": false,
+            "createdAt": "2025-08-07T03:56:31.381Z",
+            "updatedAt": "2025-08-07T04:22:50.696Z",
+            "publishedAt": "2025-08-07T04:22:50.706Z"
+        }
+    ],
+    "meta": {
+        "pagination": {
+            "page": 1,
+            "pageSize": 25,
+            "pageCount": 1,
+            "total": 3
+        }
+    }
+}
 
 
 
