@@ -592,5 +592,16 @@ Async/Await Bashed example of Axios
 }
 
 
-
+Everyone Prepare the POSTMAN Collection for below APIs
+1. Get Country
+2. Get State
+3. Get City
+4. Get BusinessCategory
+5. Get BusinessDetail
+6. Get BusinessDetail by City
+7. Get BusinessDetail by State
+8. Get BusinessDetail by Country
+9. Get BusinessDetail by City and Category (Most IMP API)
+10.Get BusinessDetail Whose Name start with "abc..." by city
+11.Get BusinessDetail By BusinessDetail ID.
 
