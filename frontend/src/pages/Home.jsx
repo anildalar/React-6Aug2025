@@ -1,32 +1,37 @@
 //1. Import area
-import React, { useEffect, useState } from 'react'
-import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { BACKEND_URL } from '../lib/Helper';
-
-
+import { Link } from 'react-router-dom';
+//import something form somelib
+import axios from 'axios';
+//const axios = require('axios');
 //2. Function definatoin area
  function Home() {
     //2.1 Hooks area  Hooks Variable/Hooks Function
-    const [appInfo,setAppInfo] = useState([]);
+    const [businessDetail,setBusinessDetail] = useState([]);
 
     useEffect(()=>{
-        //alert("The page is loaded successfully");
+        //Call the api
 
-        //Define
-        const fetchAppInfo = async () => {
-            //Call The api
-                try {
-                    //Always call the api in TryCatch BLock
-                    const response = await axios.get('http://localhost:1337/api/app-info?populate=*');
-                    
-                    //console.log(response?.data?.data);
-                    setAppInfo(response?.data?.data);
-                } catch (error) {
-                    console.log('ok');
-                }
+        try {
+            //use axios is promise Chain
+            axios.get(`${BACKEND_URL}/api/business-details`)
+            .then(function (response) {
+                // handle success
+                console.log(response?.data?.data);
+                setBusinessDetail(response?.data?.data);
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            .finally(function () {
+                // always executed
+            });
+
+        } catch (error) {
+            console.log(error);
         }
-        //2. Call
-        fetchAppInfo();
 
     },[]);
 
@@ -36,10 +41,28 @@ import { BACKEND_URL } from '../lib/Helper';
     //2.3 Return Statement
     return (
         <>
-            <h1></h1>
-            <img width={200} src={BACKEND_URL+appInfo?.app_logo?.url} />
-            {console.log('Backend URL >>>>>>>',BACKEND_URL)}
-            {console.log(appInfo?.app_logo?.url)}
+            <table className="table">
+                <thead>
+                    <tr>
+                        <th>BusinessId</th>
+                        <th>BusinessName</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        //array.map(function(currentValue, index, arr), thisValue)
+                        businessDetail.map((cv,idx,arr)=>{
+                            return <tr key={idx}>
+                                        <td>1</td>
+                                        <td>
+                                            <a href={`/businessdetail/${cv.documentId}`}>{cv.business_name}</a>
+                                        </td>
+                                    </tr>
+                        })
+                    }
+                       
+                </tbody>    
+            </table>  
            
         </>
     )
